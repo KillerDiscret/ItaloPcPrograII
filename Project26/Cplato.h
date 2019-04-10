@@ -21,6 +21,7 @@ public:
 	void get_nombre();
 	void get_temperatura();
 	void get_sabor();
+	int retornar_sabor();
 	void get_calorias();
 	void get_precio();
 	~plato();
@@ -100,6 +101,10 @@ void plato::get_sabor()
 	{
 		cout << "Es un plato no picante" << endl;
 	}
+}
+int plato::retornar_sabor()
+{
+	return sabor;
 }
 void plato::get_calorias()
 {

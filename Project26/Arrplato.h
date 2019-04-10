@@ -9,6 +9,7 @@ private:
 public:
 	APlato();
 	void agregar(plato *obj);
+	void eliminar(int indice);
 	plato *obtener(int indice);
 	int get_N();
 	void set_N(int valor);
@@ -37,6 +38,22 @@ void APlato::agregar(plato *obj)
 		//es decir el arreglo antiguo aumenta de tamaño con 1 nuevo valor adicional
 		arreglo = temporal;
 
+}
+void APlato::eliminar(int indice)
+{
+	plato**temporal;
+	temporal = new plato*[*N-1];
+	int aux = 0;
+	for (int i = 0; i<*N; i++)
+	{
+		if (i != indice)
+		{
+			temporal[aux] = arreglo[i];
+		}
+		aux++;
+	}
+	*N = *N - 1;
+	arreglo = temporal;
 }
 plato *APlato:: obtener(int indice)
 {
